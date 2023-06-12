@@ -224,6 +224,22 @@
       margin-top: 10px;
       text-align: center;
     }
+
+    .edit-button {
+        background-color: #ffcc00;
+        border: none;
+        color: #ffffff;
+        padding: 4px 8px;
+        font-size: 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .edit-button:hover {
+        background-color: #ffa500;
+      }
+
   </style>
     <script>
     // JavaScript 코드
@@ -302,8 +318,8 @@
 <hr>
     <div class="profile-bio">
       <h3>인사말</h3>
-      <p>안녕하세요. 닉네임입니다.</p>
-      <p>이곳에는 자유롭게 소개글을 작성해 넣을 수 있습니다.</p>
+<button class="edit-button" onclick="editGreeting()">인사말 수정</button>
+      <p id="greeting">안녕하세요. 닉네임입니다.</p>
 <br>
 </br>
 <hr>
@@ -388,4 +404,13 @@
     &copy; 2023 Your Website. All rights reserved.
   </div>
 </body>
+<script>
+      function editGreeting() {
+        var newGreeting = prompt("새로운 인사말을 입력하세요."); // 사용자로부터 새로운 인사말 입력 받기
+
+        if (newGreeting !== null && newGreeting !== "") { // 입력값이 비어있지 않은 경우
+          document.getElementById("greeting").textContent = newGreeting; // 인사말 엘리먼트의 내용 변경
+        }
+      }
+    </script>
 </html>
